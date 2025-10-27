@@ -229,7 +229,7 @@ function Edit(props) {
       })]
     }), !breakpoints && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Tip, {
       children: ["Use custom breakpoints by defining them in your theme.json file.", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.ExternalLink, {
-        href: "https://github.com/Julian1729/hide-block-screen-size",
+        href: "https://github.com/Julian1729/hide-block-screen-size?tab=readme-ov-file#theme-integration-link",
         children: "See Documentation"
       })]
     })]

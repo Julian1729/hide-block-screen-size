@@ -59,7 +59,7 @@ For more precise control:
 
 ![Custom Breakpoint Example](screenshot-custom-breakpoint.png)
 
-### Theme Integration [link](#1-this-is-my-header)
+### Theme Integration
 
 Define custom breakpoints in your `theme.json`:
 

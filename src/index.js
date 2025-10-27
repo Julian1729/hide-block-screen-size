@@ -271,7 +271,7 @@ function Edit(props) {
 			{!breakpoints && (
 				<Tip>
 					Use custom breakpoints by defining them in your theme.json file.{" "}
-					<ExternalLink href="https://github.com/Julian1729/hide-block-screen-size">
+					<ExternalLink href="https://github.com/Julian1729/hide-block-screen-size?tab=readme-ov-file#theme-integration-link">
 						See Documentation
 					</ExternalLink>
 				</Tip>
