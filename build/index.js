@@ -32,6 +32,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+``;
 
 
 const supportedBlocks = ["core/group", "core/heading", "core/paragraph", "core/columns", "core/column", "core/cover", "core/media-text", "core/button"];
@@ -227,9 +228,10 @@ function Edit(props) {
         })]
       })]
     }), !breakpoints && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Tip, {
-      children: ["Use custom breakpoints by defining ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("code", {
-        children: "custom.breakpoints"
-      }), " in your theme.json file"]
+      children: ["Use custom breakpoints by defining them in your theme.json file.", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.ExternalLink, {
+        href: "https://github.com/Julian1729/hide-block-screen-size",
+        children: "See Documentation"
+      })]
     })]
   });
 }

@@ -11,9 +11,11 @@ import {
 	__experimentalNumberControl as NumberControl,
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
+	ExternalLink,
 	ToggleControl,
 	Tip,
 } from "@wordpress/components";
+``;
 
 import "./style.scss";
 
@@ -268,8 +270,10 @@ function Edit(props) {
 
 			{!breakpoints && (
 				<Tip>
-					Use custom breakpoints by defining <code>custom.breakpoints</code> in
-					your theme.json file
+					Use custom breakpoints by defining them in your theme.json file.{" "}
+					<ExternalLink href="https://github.com/Julian1729/hide-block-screen-size">
+						See Documentation
+					</ExternalLink>
 				</Tip>
 			)}
 		</InspectorAdvancedControls>
