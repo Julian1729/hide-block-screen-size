@@ -1,0 +1,47 @@
+// add padding to the suffix of NumberControl components
+.components-number-control .components-input-control__suffix {
+	padding-right: 10px;
+}
+
+.hbss-mqp {
+	margin-top: 15px;
+
+	&__pre {
+		word-wrap: break-word;
+		white-space: pre-wrap;
+		display: none;
+	}
+
+	&__button {
+		// appearance: none;
+		// background: none;
+		// border: none;
+		// padding: 0;
+		font-size: 12px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		gap: 5px;
+
+		svg {
+			max-width: 10px;
+			max-height: 10px;
+			transition: transform 0.2s ease-in-out;
+		}
+	}
+
+	&__toggle {
+		// WARNING: not accessible
+		display: none !important;
+	}
+}
+
+// Checked styles
+.hbss-mqp__toggle:checked ~ .hbss-mqp__button svg,
+.hbss-mqp__toggle:checked + .hbss-mqp__button svg {
+	transform: rotate(90deg); /* now arrow points up */
+}
+
+.hbss-mqp__toggle:checked ~ .hbss-mqp__pre {
+	display: block;
+}

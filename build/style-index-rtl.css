@@ -1,0 +1,43 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+.components-number-control .components-input-control__suffix {
+  padding-left: 10px;
+}
+
+.hbss-mqp {
+  margin-top: 15px;
+}
+
+.hbss-mqp__pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  display: none;
+}
+
+.hbss-mqp__button {
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hbss-mqp__button svg {
+  max-width: 10px;
+  max-height: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.hbss-mqp__toggle {
+  display: none !important;
+}
+
+.hbss-mqp__toggle:checked ~ .hbss-mqp__button svg,
+.hbss-mqp__toggle:checked + .hbss-mqp__button svg {
+  transform: rotate(-90deg); /* now arrow points up */
+}
+
+.hbss-mqp__toggle:checked ~ .hbss-mqp__pre {
+  display: block;
+}
