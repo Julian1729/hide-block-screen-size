@@ -6,6 +6,8 @@
 
 A powerful WordPress plugin that allows you to conditionally hide blocks based on screen sizes. Perfect for creating responsive designs without writing custom CSS!
 
+![UI Example](assets/screenshots/main-image.png)
+
 ## ✨ Features
 
 - 🎯 **Smart Block Visibility**: Hide blocks on mobile, tablet, desktop, or custom breakpoints
@@ -31,6 +33,7 @@ The plugin works seamlessly with the most commonly used WordPress blocks:
 2. Go to **Plugins** → **Add New** → **Upload Plugin**
 3. Choose the ZIP file and click **Install Now**
 4. Activate the plugin
+5. Edit a supported block in the block editor, and view the controls in the Advanced Inspector Panel
 
 ### Manual Installation
 
@@ -57,7 +60,7 @@ For more precise control:
 3. Set your **Hide over** value (maximum width)
 4. Preview the generated media query in real-time
 
-![Custom Breakpoint Example](screenshot-custom-breakpoint.png)
+![Custom Breakpoint Example](assets/screenshots/between-image.png)
 
 ### Theme Integration
 
