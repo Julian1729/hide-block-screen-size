@@ -1,0 +1,24 @@
+# Development files
+
+src/
+node_modules/
+.git/
+.gitignore
+.editorconfig
+
+# Build artifacts not needed in distribution
+
+\*.map
+package-lock.json
+
+# Development dependencies
+
+package.json
+
+# Documentation (already in readme.txt)
+
+README.md
+
+# Assets folder (unless it contains screenshots)
+
+assets/

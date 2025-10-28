@@ -1,16 +1,19 @@
 <?php
 /**
  * Plugin Name:       Hide Block Screen Size
- * Description:       Example block scaffolded with Create Block tool.
+ * Description:       Conditionally hide WordPress blocks based on screen sizes. Perfect for creating responsive designs without writing custom CSS.
  * Version:           0.1.0
- * Requires at least: 6.7
+ * Requires at least: 6.2
  * Requires PHP:      7.4
- * Author:            The WordPress Contributors
+ * Author:            Julian1729
+ * Author URI:        https://julianhernandez.me
+ * Plugin URI:        https://github.com/Julian1729/hide-block-screen-size
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       hide-block-screen-size
+ * Domain Path:       /languages
  *
- * @package CreateBlock
+ * @package HideBlockScreenSize
  */
 namespace HideBlockScreenSize;
 
@@ -61,31 +64,56 @@ function hbss_collect_visibility_rule($class, $attrs) {
  * Render block filter
  */
 add_filter('render_block', function ($block_content, $block) {
-    if ( empty($block['attrs']) ) return $block_content;
-
-    $attrs = $block['attrs'];
-
-    if (
-        empty($attrs['hideOnMobile']) &&
-        empty($attrs['hideOnTablet']) &&
-        empty($attrs['hideOnDesktop']) &&
-        empty($attrs['hideOnCustomBreakpoint'])
-    ) {
+    // Security: Only process in admin or frontend
+    if ( ! is_admin() && ! wp_doing_ajax() && ! is_singular() && ! is_home() && ! is_archive() ) {
         return $block_content;
     }
 
+    if ( empty($block['attrs']) || ! is_array($block['attrs']) ) {
+        return $block_content;
+    }
+
+    $attrs = $block['attrs'];
+
+    // Validate attributes exist and are boolean/numeric
+    $has_visibility_rules = false;
+    if ( ! empty($attrs['hideOnMobile']) && is_bool($attrs['hideOnMobile']) ) {
+        $has_visibility_rules = true;
+    }
+    if ( ! empty($attrs['hideOnTablet']) && is_bool($attrs['hideOnTablet']) ) {
+        $has_visibility_rules = true;
+    }
+    if ( ! empty($attrs['hideOnDesktop']) && is_bool($attrs['hideOnDesktop']) ) {
+        $has_visibility_rules = true;
+    }
+    if ( ! empty($attrs['hideOnCustomBreakpoint']) && is_bool($attrs['hideOnCustomBreakpoint']) ) {
+        $has_visibility_rules = true;
+    }
+
+    if ( ! $has_visibility_rules ) {
+        return $block_content;
+    }
+
+    // Sanitize custom width values if present
+    if ( isset($attrs['customMinWidth']) ) {
+        $attrs['customMinWidth'] = absint($attrs['customMinWidth']);
+    }
+    if ( isset($attrs['customMaxWidth']) ) {
+        $attrs['customMaxWidth'] = absint($attrs['customMaxWidth']);
+    }
+
     // create unique class
-    $unique_class = 'hbss-vis-' . wp_generate_uuid4();
+    $unique_class = 'hbss-vis-' . sanitize_html_class(wp_generate_uuid4());
     
-    // OPTIMIZE: use preg_replace for better performance
+    // Use WordPress HTML processor for safe HTML manipulation
     if (class_exists('WP_HTML_Tag_Processor')) {
-			$processor = new \WP_HTML_Tag_Processor($block_content);
-			if ($processor->next_tag()) {
-					$processor->add_class($unique_class);
-					$block_content = $processor->get_updated_html();
-			}
-		}
-		    
+        $processor = new \WP_HTML_Tag_Processor($block_content);
+        if ($processor->next_tag()) {
+            $processor->add_class($unique_class);
+            $block_content = $processor->get_updated_html();
+        }
+    }
+        
     hbss_collect_visibility_rule($unique_class, $attrs);
 
     return $block_content;
