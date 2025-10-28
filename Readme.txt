@@ -9,7 +9,7 @@ Stable tag: 0.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-A powerful WordPress plugin that allows you to conditionally hide blocks based on screen sizes. Perfect for creating responsive designs without writing custom CSS!
+Conditionally hide Gutenberg blocks based on theme.json defined breakpoints.
 
 == Description ==
 

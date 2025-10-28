@@ -6,7 +6,7 @@
 
 A powerful WordPress plugin that allows you to conditionally hide blocks based on screen sizes. Perfect for creating responsive designs without writing custom CSS!
 
-![UI Example](assets/screenshots/main-image.png)
+![UI Example](assets/screenshots/screenshot-2.png)
 
 ## ✨ Features
 
@@ -60,7 +60,7 @@ For more precise control:
 3. Set your **Hide over** value (maximum width)
 4. Preview the generated media query in real-time
 
-![Custom Breakpoint Example](assets/screenshots/between-image.png)
+![Custom Breakpoint Example](assets/screenshots/screenshot-2.png)
 
 ### Theme Integration
 

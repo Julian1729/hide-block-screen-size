@@ -22,6 +22,8 @@ import "./style.scss";
 const supportedBlocks = [
 	"core/group",
 	"core/heading",
+	"core/button",
+	"core/buttons",
 	"core/paragraph",
 	"core/columns",
 	"core/column",
